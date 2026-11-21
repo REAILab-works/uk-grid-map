@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GB Grid Queue Map · 594.6 GW waiting to connect</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://reailab-works.github.io/uk-grid-map/">
+<meta property="og:title" content="594.6 GW waiting to connect to Great Britain's grid">
+<meta property="og:description" content="Only 81.8 GW is connected today. An interactive map of every project in the NESO connection queue, by substation, technology and year.">
+<meta property="og:image" content="https://reailab-works.github.io/uk-grid-map/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="594.6 GW waiting to connect to Great Britain's grid">
+<meta name="twitter:description" content="Only 81.8 GW is connected today. Interactive map of the NESO connection queue.">
+<meta name="twitter:image" content="https://reailab-works.github.io/uk-grid-map/og.png">
+<meta name="theme-color" content="#0B0D11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0D11'/%3E%3Ccircle cx='12' cy='20' r='5' fill='%23D8B878'/%3E%3Ccircle cx='21' cy='11' r='3.5' fill='%236E9BD8'/%3E%3Cpath d='M12 20L21 11' stroke='%23A9BCD0' stroke-width='1.5'/%3E%3C/svg%3E">
+<meta name="description" content="594.6 GW is waiting to connect to Great Britain's transmission grid; only 81.8 GW is connected. Interactive map of the NESO TEC register by substation, technology and year.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="map"></div>
+<div id="vign"></div>
+<section id="hero" class="panel"></section>
+<nav id="legend" class="panel" aria-label="Technology filter"></nav>
+<aside id="side" class="panel"></aside>
+<div id="src"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/substations.js"></script>
+<script src="data/tec.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
