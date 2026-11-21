@@ -4,8 +4,8 @@ var GROUPS=[['Storage','#9C8CD4','储能'],['Solar + storage','#D9A85B','光伏+
 var KV={400:{c:'#A9BCD0',zh:'400 kV',en:'400 kV'},275:{c:'#5F7088',zh:'275 kV',en:'275 kV'}};
 var COL={},ZH={};GROUPS.forEach(function(g){COL[g[0]]=g[1];ZH[g[0]]=g[2]});
 var T={
- en:{eyebrow:'GB grid queue',live:'DATA',loading:'Reading the NESO TEC register…',waiting:'waiting to connect to Great Britain’s transmission grid.',only:'Only',connected:'is connected today.',conn:'Connected',wait:'Waiting',by:'Contracted to connect by',all:'All years',play:'Play',pause:'Pause',top:'Longest queues · MW',back:'← Back',projects:'projects',project:'project',waitingMW:'waiting',allStatus:'All statuses',foot:'Dashed rings are planned connection nodes with no substation yet, placed at the approximate area. Lines are a schematic of 400 kV and 275 kV circuits; the moving light is decorative and does not show power flow.',approx:'approximate location',area:'approximate area · planned node',src:function(d,n,p){return 'Source: <a href="https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register" target="_blank" rel="noopener">NESO TEC register</a>, snapshot of '+d+'. '+n+' queued entries in view; '+p+'% of their MW placed on the map. Circuits: NESO ETYS 2024 Appendix B via <a href="https://github.com/andrewlyden/PyPSA-GB" target="_blank" rel="noopener">PyPSA-GB</a> (MIT). Locations: OpenStreetMap (ODbL), PyPSA-GB, Nominatim.'},err:'Data snapshot is missing.',search:'Search substation, project or developer',none:'No match'},
- zh:{eyebrow:'英国电网并网排队',live:'数据',loading:'正在读取 NESO TEC 登记表…',waiting:'正在排队，等待接入英国输电网。',only:'目前已并网的只有',connected:'。',conn:'已并网',wait:'排队中',by:'合同并网年份截至',all:'全部年份',play:'播放',pause:'暂停',top:'排队最长的变电站 · MW',back:'← 返回',projects:'个项目',project:'个项目',waitingMW:'排队',allStatus:'全部状态',foot:'虚线圆圈是尚未建成的规划接入节点，位置为大致区域。线路为 400 kV 和 275 kV 输电回路的示意连线；流动光点仅为装饰，不代表潮流方向。',approx:'大致位置',area:'大致区域 · 规划节点',src:function(d,n,p){return '数据：<a href="https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register" target="_blank" rel="noopener">NESO TEC 登记表</a>，'+d+' 版快照。当前视图 '+n+' 条排队记录，其中 '+p+'% 的容量已定位到地图。线路：NESO ETYS 2024 附录 B，经 <a href="https://github.com/andrewlyden/PyPSA-GB" target="_blank" rel="noopener">PyPSA-GB</a>（MIT）整理。位置：OpenStreetMap（ODbL）、PyPSA-GB、Nominatim。'},err:'缺少数据快照。',search:'搜索变电站、项目或开发商',none:'没有匹配结果'}
+ en:{eyebrow:'GB grid queue',live:'DATA',loading:'Reading the NESO TEC register…',waiting:'waiting to connect to Great Britain’s transmission grid.',only:'Only',connected:'is connected today.',conn:'Connected',wait:'Waiting',by:'Contracted to connect by',all:'All years',play:'Play',pause:'Pause',top:'Longest queues · MW',back:'← Back',projects:'projects',project:'project',waitingMW:'waiting',allStatus:'All statuses',foot:'Dashed rings are planned connection nodes with no substation yet, placed at the approximate area. Lines are a schematic of 400 kV and 275 kV circuits; the moving light is decorative and does not show power flow.',approx:'approximate location',area:'approximate area · planned node',src:function(d,n,p){return 'Source: <a href="https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register" target="_blank" rel="noopener">NESO TEC register</a>, snapshot of '+d+'. '+n+' queued entries in view; '+p+'% of their MW placed on the map. Circuits: NESO ETYS 2024 Appendix B via <a href="https://github.com/andrewlyden/PyPSA-GB" target="_blank" rel="noopener">PyPSA-GB</a> (MIT). Locations: OpenStreetMap (ODbL), PyPSA-GB, Nominatim.'},tour:'▶ 30-second tour',filt:'queued under the current filter.',err:'Data snapshot is missing.',search:'Search substation, project or developer',none:'No match'},
+ zh:{eyebrow:'英国电网并网排队',live:'数据',loading:'正在读取 NESO TEC 登记表…',waiting:'正在排队，等待接入英国输电网。',only:'目前已并网的只有',connected:'。',conn:'已并网',wait:'排队中',by:'合同并网年份截至',all:'全部年份',play:'播放',pause:'暂停',top:'排队最长的变电站 · MW',back:'← 返回',projects:'个项目',project:'个项目',waitingMW:'排队',allStatus:'全部状态',foot:'虚线圆圈是尚未建成的规划接入节点，位置为大致区域。线路为 400 kV 和 275 kV 输电回路的示意连线；流动光点仅为装饰，不代表潮流方向。',approx:'大致位置',area:'大致区域 · 规划节点',src:function(d,n,p){return '数据：<a href="https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register" target="_blank" rel="noopener">NESO TEC 登记表</a>，'+d+' 版快照。当前视图 '+n+' 条排队记录，其中 '+p+'% 的容量已定位到地图。线路：NESO ETYS 2024 附录 B，经 <a href="https://github.com/andrewlyden/PyPSA-GB" target="_blank" rel="noopener">PyPSA-GB</a>（MIT）整理。位置：OpenStreetMap（ODbL）、PyPSA-GB、Nominatim。'},tour:'▶ 30 秒看懂',filt:'符合当前筛选条件的排队容量。',err:'缺少数据快照。',search:'搜索变电站、项目或开发商',none:'没有匹配结果'}
 };
 var lang='en';try{lang=localStorage.getItem('gbq-lang')||(/^zh/i.test(navigator.language)?'zh':'en')}catch(e){}
 function t(k){return T[lang][k]}
@@ -42,26 +42,28 @@ function locate(site,to){
   return null;
 }
 
-var state={groups:{},status:'all',sel:null,year:null,playing:null,kv:{400:true,275:true}};
+var state={groups:{},status:'all',cust:null,sel:null,year:null,playing:null,kv:{400:true,275:true}};
 var LN={en:{circ:'circuits',circ1:'circuit',rating:'winter rating',len:'route',links:'Connected circuits',approxLine:'one end located approximately',grid:'Grid'},zh:{circ:'回路',circ1:'回路',rating:'冬季额定容量',len:'线路长度',links:'相连回路',approxLine:'一端为大致位置',grid:'电网'}};
 function ln(k){return LN[lang][k]}
 GROUPS.forEach(function(g){state.groups[g[0]]=true});
 var nEntries=0,dataDate='',rows=[],connectedMW=0,readAt='',map,layer,pulses,lines,lastList=[],years=[],nRows=0,pctPlaced=0;
 
-function passBase(r){return (state.status==='all'||r.status===state.status)&&(state.year==null||r.y<=state.year)}
+function passBase(r){return (state.status==='all'||r.status===state.status)&&(state.cust==null||r.cust===state.cust)&&(state.year==null||r.y<=state.year)}
 
+function filtered(){return state.status!=='all'||state.cust!=null||state.year!=null||GROUPS.some(function(g){return !state.groups[g[0]]})}
 function hero(tot){
   var all=tot+connectedMW,yrs=years.length?years:[0];
   $('hero').innerHTML='<div class="toprow"><span class="eyebrow">'+t('eyebrow')+'</span><span class="right"><button class="lang" id="lang">'+(lang==='en'?'中文':'EN')+'</button><span class="live"><i></i>'+t('live')+' '+esc(dataDate)+'</span></span></div>'+
     (rows.length?'<h1><span id="big">'+gw(lastTot==null?0:lastTot)+'</span><small>GW</small></h1>'+
-    '<p class="lede">'+t('waiting')+' <br>'+t('only')+' <span class="mono" style="color:var(--text)">'+gw(connectedMW)+' GW</span> '+t('connected')+'</p>'+
-    '<div class="ratio"><i style="width:'+(all?connectedMW/all*100:0).toFixed(1)+'%;background:var(--accent)"></i><i style="flex:1;background:rgba(255,255,255,.14)"></i></div>'+
-    '<div class="ratio-key"><span>'+t('conn')+'</span><span>'+t('wait')+'</span></div>'+
+    (filtered()?'<p class="lede">'+t('filt')+'</p>':'<p class="lede">'+t('waiting')+' <br>'+t('only')+' <span class="mono" style="color:var(--text)">'+gw(connectedMW)+' GW</span> '+t('connected')+'</p>')+
+    '<button class="tour" id="tourbtn">'+t('tour')+'</button>'+(filtered()?'':'<div class="ratio"><i style="width:'+(all?connectedMW/all*100:0).toFixed(1)+'%;background:var(--accent)"></i><i style="flex:1;background:rgba(255,255,255,.14)"></i></div>'+
+    '<div class="ratio-key"><span>'+t('conn')+'</span><span>'+t('wait')+'</span></div>')+
     '<div class="yr"><div class="yrhead"><span>'+t('by')+'</span><b class="mono" id="yrv">'+(state.year==null?t('all'):state.year)+'</b></div>'+
     '<div class="yrrow"><button class="play" id="play" aria-label="'+(state.playing?t('pause'):t('play'))+'">'+(state.playing?'❚❚':'▶')+'</button><input type="range" id="yr" min="'+yrs[0]+'" max="'+yrs[yrs.length-1]+'" step="1" value="'+(state.year==null?yrs[yrs.length-1]:state.year)+'"></div></div>'
     :'<h1>—</h1><p class="lede">'+t('loading')+'</p>');
   $('lang').onclick=function(){lang=lang==='en'?'zh':'en';try{localStorage.setItem('gbq-lang',lang)}catch(e){}document.documentElement.lang=lang==='zh'?'zh-CN':'en';render(true)};
   var yr=$('yr');if(yr){yr.oninput=function(){stop();var v=+yr.value;state.year=v>=years[years.length-1]?null:v;state.sel=null;render(true)}}
+  var tb=$('tourbtn');if(tb)tb.onclick=function(){tourStart()};
   var pl=$('play');if(pl)pl.onclick=function(){state.playing?stop():play()};
   if(rows.length)tween(tot);
 }
@@ -209,6 +211,52 @@ function styleLines(){
   segs.forEach(function(s){if(s.hot)s.p.bringToFront()});
 }
 function connected(){return segs.filter(function(s){return s.hot}).map(function(s){return s.l})}
+
+/* ---------- guided tour ---------- */
+var UC='Under Construction/Commissioning',tour={i:-1,auto:null};
+function L2(z,e){return lang==='zh'?z:e}
+function pc(a,b){return (a/b*100).toFixed(1).replace(/\.0$/,'')}
+function tstat(){var s={tot:0,st:{},g:{},c:{}};rows.forEach(function(r){s.tot+=r.mw;s.st[r.status]=(s.st[r.status]||0)+r.mw;s.g[r.group]=(s.g[r.group]||0)+r.mw;s.c[r.cust]=(s.c[r.cust]||0)+r.mw});return s}
+function reset(){GROUPS.forEach(function(g){state.groups[g[0]]=true});state.status='all';state.cust=null;state.year=null;state.sel=null}
+function home(){map.flyTo(mobile()?[54.4,-2.6]:[54.6,-3.8],mobile()?5:6,{duration:1})}
+function fit(pred){var pts=lastList.filter(pred||function(){return true}).map(function(s){return [s.loc[0],s.loc[1]]});if(!pts.length)return;
+  map.flyToBounds(L.latLngBounds(pts),{paddingTopLeft:mobile()?[16,130]:[430,50],paddingBottomRight:mobile()?[16,230]:[370,100],maxZoom:9,duration:1})}
+function tsteps(){
+  var s=tstat(),top=Object.keys(s.c).sort(function(a,b){return s.c[b]-s.c[a]})[0],stor=(s.g['Storage']||0)+(s.g['Solar + storage']||0),off=s.g['Offshore wind']||0;
+  return [
+   {t:L2('排队容量是已并网的 '+(s.tot/connectedMW).toFixed(1)+' 倍','The queue is '+(s.tot/connectedMW).toFixed(1)+'× today’s connected grid'),
+    b:L2(gw(s.tot)+' GW 在排队，今天已并网 '+gw(connectedMW)+' GW。每个圆圈是一个变电站，越大排得越长。',gw(s.tot)+' GW is waiting; '+gw(connectedMW)+' GW is connected. Each circle is a substation: the bigger, the longer the queue.'),
+    a:function(){reset();render(true);home()}},
+   {t:L2('只有 '+pc(s.st[UC]||0,s.tot)+'% 在施工','Only '+pc(s.st[UC]||0,s.tot)+'% is under construction'),
+    b:L2('排队容量里 '+pc(s.st['Scoping']||0,s.tot)+'% 还停在 Scoping（初步设想）阶段，施工或调试中的只有 '+gw(s.st[UC]||0)+' GW。地图现在只显示这一小部分。',pc(s.st['Scoping']||0,s.tot)+'% of the queue is still at the Scoping stage; only '+gw(s.st[UC]||0)+' GW is under construction or commissioning. The map now shows just that slice.'),
+    a:function(){reset();state.status=UC;render(true);home()}},
+   {t:L2('电池储能（含光储）占 '+pc(stor,s.tot)+'%','Batteries (incl. solar + storage): '+pc(stor,s.tot)+'%'),
+    b:L2('储能与光伏+储能合计 '+gw(stor)+' GW，是排队里最大的一类。',"Storage and solar + storage add up to "+gw(stor)+' GW, the largest category in the queue.'),
+    a:function(){reset();GROUPS.forEach(function(g){state.groups[g[0]]=g[0]==='Storage'||g[0]==='Solar + storage'});render(true);fit(function(x){return x.q!=='a'})}},
+   {t:L2('一家开发商就排了 '+gw(s.c[top])+' GW','One developer: '+gw(s.c[top])+' GW'),
+    b:L2(top+' 名下的记录合计 '+gw(s.c[top])+' GW，相当于今天全部已并网容量的 '+pc(s.c[top],connectedMW)+'%。',top+' holds '+gw(s.c[top])+' GW of entries, equal to '+pc(s.c[top],connectedMW)+'% of everything connected today.'),
+    a:function(){reset();state.cust=top;render(true);fit()}},
+   {t:'',b:'',a:function(){reset();render(true);var sp=lastList.filter(function(x){return x.q!=='a'})[0];if(sp){tour.sp=sp;select(sp);var c=$('story');if(c){c.querySelector('b').textContent=L2('最堵的变电站：','Longest queue: ')+sp.label;c.querySelector('p').textContent=L2(gw(sp.mw)+' GW，'+sp.rows.length+' 个项目在排队。点开圆圈能看到每一个项目。',gw(sp.mw)+' GW across '+sp.rows.length+' projects. Click any circle to see each one.')}}}},
+   {t:L2('海上风电 '+gw(off)+' GW','Offshore wind: '+gw(off)+' GW'),
+    b:L2('占排队总量的 '+pc(off,s.tot)+'%。圆圈越大，这个接入点排的海上风电越多。','That is '+pc(off,s.tot)+'% of the queue. The bigger the circle, the more offshore wind waits at that connection point.'),
+    a:function(){reset();GROUPS.forEach(function(g){state.groups[g[0]]=g[0]==='Offshore wind'});render(true);fit()}}
+  ];
+}
+function tourShow(i){
+  var st=tsteps();if(i<0||i>=st.length){tourStop();return}
+  tour.i=i;var d=st[i],c=$('story');
+  if(!c){c=document.createElement('div');c.id='story';c.className='panel';document.body.appendChild(c)}
+  var dots='';for(var k=0;k<st.length;k++)dots+='<i'+(k===i?' class="on"':'')+'></i>';
+  c.innerHTML='<div class="sk">'+(i+1)+' / '+st.length+'</div><b>'+esc(d.t)+'</b><p>'+esc(d.b)+'</p><div class="sc"><button id="sprev" aria-label="prev"'+(i?'':' disabled')+'>←</button><span class="dots">'+dots+'</span><button id="snext" aria-label="next">'+(i===st.length-1?'✓':'→')+'</button><button id="sx" aria-label="close">✕</button></div>';
+  c.classList.add('show');document.body.classList.add('touring');
+  $('sprev').onclick=function(){tourHold();tourShow(tour.i-1)};
+  $('snext').onclick=function(){tourHold();tourShow(tour.i+1)};
+  $('sx').onclick=function(){tourStop()};
+  stop();d.a();
+}
+function tourHold(){if(tour.auto){clearInterval(tour.auto);tour.auto=null}}
+function tourStart(){tourHold();tourShow(0);tour.auto=setInterval(function(){tourShow(tour.i+1)},8500)}
+function tourStop(){tourHold();tour.i=-1;var c=$('story');if(c)c.classList.remove('show');document.body.classList.remove('touring');reset();render(true);home()}
 
 function start(T0){
   connectedMW=T0.connectedMW;nEntries=T0.entries;dataDate=T0.date;
