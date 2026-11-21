@@ -32,7 +32,7 @@ An interactive map of the NESO Transmission Entry Capacity (TEC) register: every
 
 ## Run it locally
 
-No build step. Open index.html in a browser. The data is embedded as data/tec.js and data/substations.js, so the page makes no calls to NESO when it loads. Map tiles (Esri), Leaflet and fonts load from their CDNs.
+No build step. Open index.html in a browser. The data is embedded as data/tec.js and data/substations.js, so the page makes no calls to NESO when it loads. The coastline is drawn from data/land.js, so there are no map tiles. Leaflet and fonts load from their CDNs.
 
 To update the data, replace the rows in data/tec.js with a newer TEC register export.
 
@@ -41,7 +41,7 @@ To update the data, replace the rows in data/tec.js with a newer TEC register ex
 - TEC register: Supported by National Energy SO Open Data. Used under the [NESO Open Data Licence](https://www.neso.energy/data-portal/neso-open-licence).
 - Substation locations: © OpenStreetMap contributors, available under the [Open Database Licence (ODbL)](https://opendatacommons.org/licenses/odbl/). The location table in data/substations.js is derived from OpenStreetMap and is shared under the ODbL as well.
 - Circuits and some coordinates: [PyPSA-GB](https://github.com/andrewlyden/PyPSA-GB) (MIT), from NESO ETYS 2024 Appendix B.
-- Basemap tiles: Esri. Map library: Leaflet.
+- Coastlines: [Natural Earth](https://www.naturalearthdata.com/) (public domain), via world-atlas. Map library: Leaflet.
 
 This is an independent project. It is not affiliated with or endorsed by NESO or any network operator.
 
