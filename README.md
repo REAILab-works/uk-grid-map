@@ -36,9 +36,15 @@ An interactive map of the NESO Transmission Entry Capacity (TEC) register: every
                        
                         - To update the data, replace the rows in data/tec.js with a newer TEC register export.
                        
-                        - ## Credits
-                       
-                        - Data: NESO, OpenStreetMap contributors, PyPSA-GB, Esri. Built with Leaflet.
-                       
-                        - An independent project. It is not affiliated with NESO or any network operator.
-                        - 
+                        - ## Licences and attribution
+
+- TEC register: Supported by National Energy SO Open Data. Used under the [NESO Open Data Licence](https://www.neso.energy/data-portal/neso-open-licence).
+- Substation locations: © OpenStreetMap contributors, available under the [Open Database Licence (ODbL)](https://opendatacommons.org/licenses/odbl/). The location table in data/substations.js is derived from OpenStreetMap and is shared under the ODbL as well.
+- Circuits and some coordinates: [PyPSA-GB](https://github.com/andrewlyden/PyPSA-GB) (MIT), from NESO ETYS 2024 Appendix B.
+- Basemap tiles: Esri. Map library: Leaflet.
+
+This is an independent project. It is not affiliated with or endorsed by NESO or any network operator.
+
+## Contributing
+
+Ideas, corrections and collaborators are welcome. If a project sits at the wrong substation, a location is off, or you would like to add another dataset, please open an issue or a pull request.
