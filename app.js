@@ -275,7 +275,9 @@ map=L.map('map',{zoomControl:false,minZoom:4,maxZoom:13}).setView(mobile()?[54.4
 if(mobile())$('side').classList.add('collapsed');
 map.createPane('grid');map.getPane('grid').style.zIndex=350;
 L.control.zoom({position:'bottomright'}).addTo(map);
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:'&copy; Esri &middot; Leaflet'}).addTo(map);
+map.createPane('land');map.getPane('land').style.zIndex=200;map.getPane('land').style.pointerEvents='none';
+if(window.LAND)L.geoJSON(window.LAND,{pane:'land',interactive:false,attribution:'Coastlines: Natural Earth &middot; &copy; OpenStreetMap contributors &middot; Leaflet',style:function(f){var home=/United Kingdom|Ireland|Isle of Man|Guernsey|Jersey/.test(f.properties.n);return {color:home?'#3A4456':'#262D3A',weight:home?1:.7,fillColor:home?'#141922':'#10141B',fillOpacity:1}}}).addTo(map);
+[['North Sea',56.4,2.6],['Irish Sea',53.9,-5.2],['Celtic Sea',50.9,-7.4],['English Channel',50.15,-1.6],['Atlantic Ocean',57.2,-11.2],['IRELAND',53.2,-8.1,1],['FRANCE',48.9,1.6,1]].forEach(function(x){L.marker([x[1],x[2]],{pane:'land',interactive:false,keyboard:false,icon:L.divIcon({className:'geo'+(x[3]?' land':''),html:x[0],iconSize:[160,16],iconAnchor:[80,8]})}).addTo(map)});
 map.attributionControl.setPrefix(false);
 lines=L.layerGroup().addTo(map);drawLines();
 layer=L.layerGroup().addTo(map);
